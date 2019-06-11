@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require_relative "../lib/environment"
+require "irb"
+
+
+
+
+program = CLI.new.run 
+
+
+#IRB.start(__FILE__)
+
+
