@@ -27,6 +27,17 @@ class CLI
             #binding.pry
         end 
         #get user input here 
+        input = gets.strip.downcase
+         
+        case input
+            when input == "protection" || "leadership" 
+                puts "Windrunner"
+                #binding.pry
+            when input == "law" || "justice"
+                puts "Skybreaker"
+              
+        end 
+
         
     end 
 
