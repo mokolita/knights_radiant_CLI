@@ -14,33 +14,56 @@ class CLI
                 decision_time 
             end 
             #binding.pry
-        else decision_time 
+        else 
+            decision_time 
+            provide_surge_info
         end 
-    
+        
     end 
-    #Should I save the attributes into an orders array and then call the array here?
-    def decision_time
-        puts "\n\nPick the attributes you value most:\n\n"
 
-        Orders.attributes.each do |li|
+    def decision_time
+        puts "\n\nPick the attribute you value most:\n\n"
+
+        Orders.attributes.values.each do |li|
             puts "\n\t -#{li}"
             #binding.pry
         end 
-        #get user input here 
+        order_assignment 
+    end 
+
+    def order_assignment 
+
         input = gets.strip.downcase
-         
-        case input
-            when input == "protection" || "leadership" 
-                puts "Windrunner"
-                #binding.pry
-            when input == "law" || "justice"
-                puts "Skybreaker"
-              
+
+        case input  
+            when "protection", "leadership" 
+                puts "\n\n\ You are #{Orders.all[0].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[0].description.colorize(:red)}"
+            when "law", "justice"
+                puts "\n\n\ You are #{Orders.all[1].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[1].description.colorize(:red)}"
+            when "power", "destruction"
+                puts "\n\n\ You are #{Orders.all[2].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[2].description.colorize(:red)}"
+            when "food", "cultivation"
+                puts "\n\n\ You are #{Orders.all[3].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[3].description.colorize(:red)}"
+            when "healing", "truth"
+                puts "\n\n\ You are #{Orders.all[4].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[4].description.colorize(:red)}"
+            when "lies", "craftiness"
+                puts "\n\n\ You are #{Orders.all[5].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[5].description.colorize(:red)}"
+            when "knowledge", "travel"
+                puts "\n\n\ You are #{Orders.all[6].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[6].description.colorize(:red)}"
+            when "control", "progres"
+                puts "\n\n\ You are #{Orders.all[7].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[7].description.colorize(:red)}"
+            when "strength", "security"
+                puts "\n\n\ You are #{Orders.all[8].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[8].description.colorize(:red)}"
+            when "reconciliation", "authority"
+                puts "\n\n\ You are #{Orders.all[9].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[9].description.colorize(:red)}"
         end 
 
         
     end 
 
+    def provide_surge_info
+        puts "\n\nWould you like more info on your surges?\n\n"
 
+    end 
 
 end 

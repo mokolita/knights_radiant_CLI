@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require "bundler/setup"
+require_relative "../lib/environment"
+
+
+
+
+
+program = CLI.new.run 
+
+

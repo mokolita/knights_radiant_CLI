@@ -1,11 +1,18 @@
 class Orders
     attr_accessor :name, :description
-    @@attributes = ["Protection & Leadhership", "Law & Justice", "Power & Disctruction", "Food & Cultivation", "Healing & Truth", "Lies & Craftiness", "Knowledge & Travel", "Control & Progress", "Strength & Security", "Reconciliation & Authority"]
-    
-    def surges
-        #iterate through the surges.all array and assign the correct surges to the instance of the order. 
+    @@attributes = {:windrunners => "Protection or Leadership", :skybreakers => "Law or Justice", :dustbringers => "Power or Destruction", :edgedancers => "Food or Cultivation", :truthwatchers => "Healing or Truth", :lightweaver => "Lies or Craftiness", :elsecallers => "Knowledge or Travel", :willshapers => "Control or Progress", :stonewards => "Strength or Security", :bondsmiths => "Reconciliation or Authority"}
+    @@all = []
+    def initialize(name, description)
+        @name = name
+        @description = description
+        @@all << self
+       
+    end 
 
-        Surges.all.collect do |surge|
+
+    def surges
+
+        Surges.all.select do |surge|
              surge.order == self 
         end 
     end
@@ -13,12 +20,13 @@ class Orders
     def self.attributes 
         @@attributes
     end 
+
+    def self.all
+        @@all
+    end 
 end 
 
 
-#I want to be able to collect it into an array and then use that array later to put out the info on the instances of surge assigned to that order
-#how to assign attribute list to orders?
-#Is attribute listthe best way to do this? Since it can not be scraped? If not attributes, then random generator?  don't like the idea of a random generateor. 
 #Attribute List
     #Windrunner - protection & leadership
     #Skybreakers - law & justice

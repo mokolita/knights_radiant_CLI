@@ -8,3 +8,6 @@ end
 
 #require_relative '../rakefile'
 require_all "./lib"
+require 'nokogiri'
+require 'colorize'
+require 'colorized_string'
