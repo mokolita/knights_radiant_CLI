@@ -56,6 +56,10 @@ class CLI
                 puts "\n\n\ You are #{Orders.all[8].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[8].description.colorize(:red)}"
             when "reconciliation", "authority"
                 puts "\n\n\ You are #{Orders.all[9].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[9].description.colorize(:red)}"
+            else 
+                puts "\n\nSo sorry! What attribute did you pick?\n\n"
+                order_assignment 
+
         end 
 
         

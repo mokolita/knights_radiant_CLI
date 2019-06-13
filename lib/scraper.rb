@@ -26,16 +26,18 @@ class Scraper
 
     def parsed_surge_attributes
 
-    parsed_surges.css("h3 .mw-headline")[2..11].each do |surge|
-        surge_name = surge.text
-    end 
+        parsed_surges.css("h3 .mw-headline")[2..11].each do |surge|
+            surge_name = surge.text
+        end 
 
-    parsed_surges.css("div.floatright ~p~ul")[0..11].each do |description|
-        surge_description = description.text
+        parsed_surges.css("div.floatright ~p~ul")[0..11].each do |description|
+            surge_description = description.text
+            binding.pry
+        end 
         #binding.pry
+        s = Surges.new(surge_name, surge_description)
+        
     end 
-    
-    
     
     
 end 
