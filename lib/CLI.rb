@@ -25,7 +25,7 @@ class CLI
         puts "\n\nPick the attribute you value most:\n\n"
 
         Orders.attributes.values.each do |li|
-            puts "\n\t -#{li}"
+            puts "\n\t -#{li}\n\n"
             #binding.pry
         end 
         order_assignment 

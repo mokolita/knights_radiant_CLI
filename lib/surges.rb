@@ -3,8 +3,9 @@ class Surge
     @@all = []
 
 
-    def initialize(name)
+    def initialize(name, description)
         @name = name 
+        @description = description
         @@all << self
         @orders = []
     end 
