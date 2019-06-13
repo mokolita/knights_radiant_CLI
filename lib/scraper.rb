@@ -24,7 +24,7 @@ class Scraper
      
     end  
 
-    parsed_surges.css("h3 span.id")[1..10]
+    parsed_surges.css("h3 .mw-headline")[2..11].text.split(/([A-Z][a-z]*)/).strip
     binding.pry
     
 end 
