@@ -28,15 +28,17 @@ class Scraper
 
         parsed_surges.css("h3 .mw-headline")[2..11].each do |surge|
             surge_name = surge.text
+            @surge_name = surge_name
         end 
 
-        parsed_surges.css("div.floatright ~p~ul")[0..11].each do |description|
-            surge_description = description.text
+        parsed_surges.css("div.floatright ~p").split(/^[ \t]+/).each do |description|
+            surge_description = description.text 
+            @surge_description = surge_description
+            binding.pry 
         end 
-        #s = Surges.new(surge_name, surge_description)
 
     def self.parsed_surge_attributes    
-        s = Surge.new(surge_name, surge_description)
+        s = Surge.new(@surge_name, @surge_description)
     end 
     
     

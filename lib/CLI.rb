@@ -6,14 +6,12 @@ class CLI
         puts "\n\n\nWelcome! So you want to be a surgebinder?\n\n\n"
         
         input = gets.strip.downcase
-        #binding.pry
         if input != "yes"
             puts "This is a life changing decision. If you would like one more chance to join the Knights Radiant, type yes! Otherwise, goodbye and good luck!"
             second_chance = gets.strip.downcase
             if second_chance == "yes"
                 decision_time 
             end 
-            #binding.pry
         else 
             decision_time 
             provide_surge_info
@@ -26,7 +24,6 @@ class CLI
 
         Orders.attributes.values.each do |li|
             puts "\n\t -#{li}\n\n"
-            #binding.pry
         end 
         order_assignment 
     end 
@@ -67,8 +64,10 @@ class CLI
 
     def provide_surge_info
         puts "\n\nWould you like more info on your surges?\n\n"
-        #Scraper.parsed_surge_attributes
-        puts Surge.all 
+        Scraper.parsed_surge_attributes
+        Surge.all
+        #puts Surge.all.first.name 
+        #puts Surge.all.first.description  
 
     end 
 
