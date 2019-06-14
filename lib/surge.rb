@@ -17,6 +17,6 @@ class Surge
 
     def self.all 
         @@all
-        binding.pry
+        #binding.pry
     end 
 end 

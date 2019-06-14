@@ -32,13 +32,13 @@ class Scraper
         end 
 
         surge_array = []
-        parsed_surges.css("div.floatright ~p").each do |description|
+        parsed_surges.css("div.floatright ~p")[0..10].each do |description|
             surge_description = description.text.split(/\n/)
             surge_array << surge_description
-            surge_array.reject {|s| s.empty?} 
-            surge_array
+            surge_array.reject!(&:empty?)
+            surge_array 
             @surge_description = surge_description
-            binding.pry 
+           # binding.pry 
         end 
 
     def self.parsed_surge_attributes    

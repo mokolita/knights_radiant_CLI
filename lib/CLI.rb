@@ -65,9 +65,8 @@ class CLI
     def provide_surge_info
         puts "\n\nWould you like more info on your surges?\n\n"
         Scraper.parsed_surge_attributes
-        Surge.all
-        #puts Surge.all.first.name 
-        #puts Surge.all.first.description  
+        puts Surge.all.first.name 
+        puts Surge.all.first.description  
 
     end 
 
