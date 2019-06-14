@@ -31,8 +31,12 @@ class Scraper
             @surge_name = surge_name
         end 
 
-        parsed_surges.css("div.floatright ~p").split(/^[ \t]+/).each do |description|
-            surge_description = description.text 
+        surge_array = []
+        parsed_surges.css("div.floatright ~p").each do |description|
+            surge_description = description.text.split(/\n/)
+            surge_array << surge_description
+            surge_array.reject {|s| s.empty?} 
+            surge_array
             @surge_description = surge_description
             binding.pry 
         end 
