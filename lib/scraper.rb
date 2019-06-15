@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
+require_relative "./surge"
 
 class Scraper
 
@@ -25,29 +26,23 @@ class Scraper
     end  
 
         parsed_surges.css("h3").each do |surge|
-            #binding.pry
+          #binding.pry
             surge_name = surge.css(".mw-headline")[2..11]
-            binding.pry
-            surge_description = surge.css("~div.floatright ~p").text 
-            s = Surge.new(surge_name, surge_description)
+            surge_descriptions = surge.css("~div.floatright ~p")[0..17].text.split(/\n/).reject!(&:empty?) 
+                surge_descriptions.each do |info|
+                    surge_description = info 
+                end  
+            
+            #s = Surge.new(surge_name, surge_description)
             binding.pry
         end 
+
+        
 
        # parsed_surges.css("h3 .mw-headline")[2..11].each do |surge|
         #    surge_name = surge.text
          #   @surge_name = surge_name
         #end 
-
-        #surge_array = []
-        #parsed_surges.css("div.floatright ~p")[0..10].each do |description|
-         #   surge_description = description.text.split(/\n/)
-          #  surge_array << surge_description
-           # surge_array.reject!(&:empty?)
-            #surge_array 
-        #    @surge_description = surge_description
-           # binding.pry 
-        #end 
-
     def self.parsed_surge_attributes    
         s = Surge.new(@surge_name, @surge_description)
     end 

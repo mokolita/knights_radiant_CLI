@@ -6,8 +6,9 @@ module KnightsRadiant
   # Your code goes here...
 end
 
-#require_relative '../rakefile'
 require_all "./lib"
+require_relative "./scraper"
+require_relative "./surge"
 require 'nokogiri'
 require 'colorize'
 require 'colorized_string'
