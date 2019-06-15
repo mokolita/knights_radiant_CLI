@@ -70,7 +70,8 @@ class CLI
         else 
         #Scraper.parsed_surge_attributes
         #puts Surge.all 
-        puts Surge.all.first.orders  
+        puts "\n\n#{Surge.all.first.name}\n\n".colorize(:green)
+        puts "#{Surge.all.first.description}\n\n".colorize(:green)  
         end 
     end 
 
