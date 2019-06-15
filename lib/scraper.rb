@@ -25,14 +25,11 @@ class Scraper
      
     end  
 
-        parsed_surges.css("h3").each do |surge|
+        parsed_surges.css("h3")[2..11].each do |surge|
           #binding.pry
-            surge_name = surge.css(".mw-headline")[2..11]
-            surge_descriptions = surge.css("~div.floatright ~p")[0..17].text.split(/\n/).reject!(&:empty?) 
-                surge_descriptions.each do |info|
-                    surge_description = info 
-                end  
-            
+            surge_name = surge.css(".mw-headline").text
+            surge_descriptions = surge.css("~div.floatright ~p")[0..-3].text.split(/\n/).reject!(&:empty?) 
+                
             #s = Surge.new(surge_name, surge_description)
             binding.pry
         end 
