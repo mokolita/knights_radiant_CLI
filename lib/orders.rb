@@ -11,7 +11,7 @@ class Orders
 
 
     def surges
-
+        @surges = []
         Surges.all.select do |surge|
              surge.order == self 
         end 

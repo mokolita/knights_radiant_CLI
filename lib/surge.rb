@@ -10,9 +10,12 @@ class Surge
         @orders = []
     end 
 
-    def orders
-        #I need to assign the surge to an instance of order that it relates to. 
-    
+    def order
+        if @description.include?("#{Orders.name}")
+            @orders << Order 
+            Orders.surges << self
+        end
+        binding.pry 
     end 
 
     def self.all 
