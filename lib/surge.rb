@@ -11,9 +11,8 @@ class Surge
     end 
 
     def order
-        if @description.include?("#{Orders.name}")
-            @orders << Orders 
-            Orders.surges << self
+        Surge.all.description.scan("#{Orders.all.name}") do |order|
+            @orders << order  
         end
         binding.pry 
     end 
