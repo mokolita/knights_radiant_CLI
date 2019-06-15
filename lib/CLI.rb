@@ -64,10 +64,14 @@ class CLI
 
     def provide_surge_info
         puts "\n\nWould you like more info on your surges?\n\n"
+        input = gets.strip.downcase  
+        if input != "yes"
+            exit  
+        else 
         #Scraper.parsed_surge_attributes
         #puts Surge.all 
-        puts Surge.all  
-
+        puts Surge.all.first.orders  
+        end 
     end 
 
 end 

@@ -11,11 +11,11 @@ class Surge
     end 
 
     def order
-        binding.pry
-        Surge.all.description.scan("#{Orders.all.name}") do |o|
-            @orders << o  
-        end
-         
+        #binding.pry
+        #@description.scan() do |o|
+            #@orders << o  
+        #end
+         #binding.pry
     end 
 
     def self.all 
@@ -24,6 +24,7 @@ class Surge
     end 
 
     def orders
+        order 
         @orders
     end 
 end 
