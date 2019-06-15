@@ -37,7 +37,7 @@ class Scraper
         
         s = Surge.new(@surge_name, @surge_description)
 
-        puts Surge.order 
+        puts s.order 
         #s.orders = "the order it belongs to."
     end 
     

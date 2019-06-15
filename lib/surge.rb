@@ -12,7 +12,7 @@ class Surge
 
     def order
         if @description.include?("#{Orders.name}")
-            @orders << Order 
+            @orders << Orders 
             Orders.surges << self
         end
         binding.pry 
