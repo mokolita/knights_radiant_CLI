@@ -25,21 +25,16 @@ class Scraper
      
     end  
 
-        parsed_surges.css("h3")[2..11].each do |surge|
-            @surge_name = surge.css(".mw-headline").text
-        end 
-                
-        parsed_surges.css("h3 ~div.floatright ~p")[0..-3].text.split(/\n/).reject!(&:empty?).each do |surge|
-            @surge_description = surge 
-        end    
-        
-    def self.parsed_surge_attributes
-        
-        s = Surge.new(@surge_name, @surge_description)
-
-        puts s.order 
-        #s.orders = "the order it belongs to."
-    end 
+    
+    surge_name = parsed_surges.css("h3 .mw-headline")[2..11].text.split(/(?=[A-Z])/)
+    surge_description = parsed_surges.css("h3 ~div.floatright ~p")[0..-3].text.split(/\n/).reject!(&:empty?)
+    surge_hash = Hash[surge_name.zip(surge_description)]
+    surge_hash.each_pair {|k, v| Surge.new(k, v)}
+    
+    
+    
+    
+    
     
     
 end 

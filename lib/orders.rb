@@ -6,17 +6,17 @@ class Orders
         @name = name
         @description = description
         @@all << self
-        surges 
+        #surges 
     end 
 
 
     def surges
-        Surges.all.select do |surge|
-             surge.order == self 
+        Surge.all.select do |surge|
+             surge.orders == self 
         end 
     end
     
-    def self.attributes 
+    def self.attributes  
         @@attributes
     end 
 
