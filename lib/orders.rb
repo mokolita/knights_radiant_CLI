@@ -6,12 +6,21 @@ class Orders
         @name = name
         @description = description
         @@all << self
-        #surges 
+        @surges = [] 
     end 
 
 
     def surges
-        a = self.description.match("(.)\Surges of")
+        a = self.description.scan(/(?<=Surges of )(.*)(?=\[12])/)
+        b = a.to_s.split(" ")
+
+        Surge.all.each do |name|
+           if b[0].gsub("[[\"", '') || b[2].gsub(".\"]]", '') == Surge.name
+                @surges << name 
+                #Surge.orders << self 
+           end
+        end 
+        @surges 
         binding.pry
     end
     
