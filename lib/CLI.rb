@@ -72,7 +72,10 @@ class CLI
         #puts Surge.all 
         puts "\n\n#{Surge.all.first.name}\n\n".colorize(:green)
         puts "#{Surge.all.first.description}\n\n".colorize(:green)
-        Orders.surges  
+        Orders.all.each do |order|
+            puts order.surges
+        end 
+              
         end 
     end 
 

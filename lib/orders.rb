@@ -11,7 +11,7 @@ class Orders
 
 
     def surges
-        @description.split("Surges of ")
+        a = self.description.match("(.)\Surges of")
         binding.pry
     end
     
