@@ -14,11 +14,17 @@ class Orders
         a = self.description.scan(/(?<=Surges of )(.*)(?=\[12])/)
         b = a.to_s.split(" ")
 
-        Surge.all.each do |name|
-           if b[0].gsub("[[\"", '') || b[2].gsub(".\"]]", '') == Surge.name
-                @surges << name 
-                #Surge.orders << self 
-           end
+        Surge.all.select do |surge_instance|
+            if b[0].gsub("[[\"", '') == surge_instance.name
+                @surges << surge_instance 
+                surge_instance.orders << self 
+            end
+        end 
+        Surge.all.select do |surge_instance|
+            if b[2].gsub(".\"]]", '') == surge_instance.name 
+                @surges << surge_instance
+                surge_instance.orders << self
+            end 
         end 
         @surges 
         binding.pry
@@ -33,6 +39,8 @@ class Orders
     end 
 end 
 
+
+#|| 
 
 #Attribute List
     #Windrunner - protection & leadership
