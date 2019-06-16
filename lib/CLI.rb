@@ -63,6 +63,7 @@ class CLI
                 @response = Orders.all[8].surges 
             when "reconciliation", "authority"
                 puts "\n\n\ You are #{Orders.all[9].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[9].description.colorize(:red)}"
+                binding.pry
                 @response = Orders.all[9].surges 
             else 
                 puts "\n\nSo sorry! What attribute did you pick?\n\n"
@@ -80,11 +81,11 @@ class CLI
             exit  
         else 
         #Scraper.parsed_surge_attributes
-        #binding.pry
-        puts "\n\n-@response[0].name.colorize(:green)\n\n"
-        puts "\t@response[0].description.colorize(:green)\n\n"
-        puts "-@response[1].name.colorize(:blue)\n\n"
-        puts "\t@response[1].description.colorize(:blue)\n\n"
+        
+        puts "\n\n-#{@response[0].name.colorize(:green)}\n\n"
+        puts "#{@response[0].description.colorize(:green)}\n\n"
+        puts "-#{@response[1].name.colorize(:blue)}\n\n"
+        puts "#{@response[1].description.colorize(:blue)}\n\n"
         
               
         end 
