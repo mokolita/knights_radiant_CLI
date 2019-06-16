@@ -11,9 +11,8 @@ class Orders
 
 
     def surges
-        Surge.all.select do |surge|
-             surge.orders == self 
-        end 
+        @description.split("Surges of ")
+        binding.pry
     end
     
     def self.attributes  

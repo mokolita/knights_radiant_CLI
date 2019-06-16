@@ -71,7 +71,8 @@ class CLI
         #Scraper.parsed_surge_attributes
         #puts Surge.all 
         puts "\n\n#{Surge.all.first.name}\n\n".colorize(:green)
-        puts "#{Surge.all.first.description}\n\n".colorize(:green)  
+        puts "#{Surge.all.first.description}\n\n".colorize(:green)
+        Orders.surges  
         end 
     end 
 
