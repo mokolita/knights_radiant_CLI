@@ -31,28 +31,38 @@ class CLI
     def order_assignment 
 
         input = gets.strip.downcase
-
+        @response = nil 
         case input  
             when "protection", "leadership" 
                 puts "\n\n\ You are #{Orders.all[0].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[0].description.colorize(:red)}"
+                @response = Orders.all[0]
             when "law", "justice"
                 puts "\n\n\ You are #{Orders.all[1].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[1].description.colorize(:red)}"
+                @response = Orders.all[1]
             when "power", "destruction"
                 puts "\n\n\ You are #{Orders.all[2].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[2].description.colorize(:red)}"
+                @response = Orders.all[2]
             when "food", "cultivation"
                 puts "\n\n\ You are #{Orders.all[3].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[3].description.colorize(:red)}"
+                @response = Orders.all[3]
             when "healing", "truth"
                 puts "\n\n\ You are #{Orders.all[4].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[4].description.colorize(:red)}"
+                @response = Orders.all[4]
             when "lies", "craftiness"
                 puts "\n\n\ You are #{Orders.all[5].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[5].description.colorize(:red)}"
+                @response = Orders.all[5]
             when "knowledge", "travel"
                 puts "\n\n\ You are #{Orders.all[6].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[6].description.colorize(:red)}"
+                @response = Orders.all[6]
             when "control", "progres"
                 puts "\n\n\ You are #{Orders.all[7].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[7].description.colorize(:red)}"
+                @response = Orders.all[7]
             when "strength", "security"
                 puts "\n\n\ You are #{Orders.all[8].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[8].description.colorize(:red)}"
+                @response = Orders.all[8]
             when "reconciliation", "authority"
                 puts "\n\n\ You are #{Orders.all[9].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[9].description.colorize(:red)}"
+                @response = Orders.all[9]
             else 
                 puts "\n\nSo sorry! What attribute did you pick?\n\n"
                 order_assignment 
@@ -69,12 +79,10 @@ class CLI
             exit  
         else 
         #Scraper.parsed_surge_attributes
-        #puts Surge.all 
-        puts "\n\n#{Surge.all.first.name}\n\n".colorize(:green)
-        puts "#{Surge.all.first.description}\n\n".colorize(:green)
-        Orders.all.each do |order|
-            puts order.surges
-        end 
+        binding.pry
+        puts @response.surges.colorize(:green)
+        puts @response.surges.colorize(:green)
+        
               
         end 
     end 
