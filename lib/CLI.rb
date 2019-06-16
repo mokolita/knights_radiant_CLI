@@ -7,7 +7,7 @@ class CLI
         
         input = gets.strip.downcase
         if input != "yes"
-            puts "This is a life changing decision. If you would like one more chance to join the Knights Radiant, type yes! Otherwise, goodbye and good luck!"
+            puts "If you would like one more chance to join the Knights Radiant, type yes! Otherwise, goodbye and good luck!"
             second_chance = gets.strip.downcase
             if second_chance == "yes"
                 decision_time 
@@ -23,7 +23,7 @@ class CLI
         puts "\n\nPick the attribute you value most:\n\n"
 
         Orders.attributes.values.each do |li|
-            puts "\n\t -#{li}\n\n"
+            puts "\n\t -#{li.colorize(:pink)}\n\n"
         end 
         order_assignment 
     end 
@@ -55,7 +55,7 @@ class CLI
             when "knowledge", "travel"
                 puts "\n\n\ You are #{Orders.all[6].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[6].description.colorize(:red)}"
                 @response = Orders.all[6].surges 
-            when "control", "progres"
+            when "control", "progress"
                 puts "\n\n\ You are #{Orders.all[7].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[7].description.colorize(:red)}"
                 @response = Orders.all[7].surges 
             when "strength", "security"
@@ -63,7 +63,7 @@ class CLI
                 @response = Orders.all[8].surges 
             when "reconciliation", "authority"
                 puts "\n\n\ You are #{Orders.all[9].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[9].description.colorize(:red)}"
-                binding.pry
+                #binding.pry
                 @response = Orders.all[9].surges 
             else 
                 puts "\n\nSo sorry! What attribute did you pick?\n\n"
@@ -80,14 +80,10 @@ class CLI
         if input != "yes"
             exit  
         else 
-        #Scraper.parsed_surge_attributes
-        
         puts "\n\n-#{@response[0].name.colorize(:green)}\n\n"
         puts "#{@response[0].description.colorize(:green)}\n\n"
         puts "-#{@response[1].name.colorize(:blue)}\n\n"
         puts "#{@response[1].description.colorize(:blue)}\n\n"
-        
-              
         end 
     end 
 
