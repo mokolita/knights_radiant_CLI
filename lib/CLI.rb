@@ -32,7 +32,7 @@ class CLI
 
         input = gets.strip.downcase
         @response = nil 
-        Orders.surges
+        
         case input  
             when "protection", "leadership" 
                 puts "\n\n\ You are #{Orders.all[0].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[0].description.colorize(:red)}"
@@ -80,11 +80,11 @@ class CLI
             exit  
         else 
         #Scraper.parsed_surge_attributes
-        binding.pry
-        puts @response[1].name.colorize(:green)
-        puts @response[1].description.colorize(:green)
-        puts @response[2].name.colorize(:blue)
-        puts @response[2].description.colorize(:blue)
+        #binding.pry
+        puts "\n\n-@response[0].name.colorize(:green)\n\n"
+        puts "\t@response[0].description.colorize(:green)\n\n"
+        puts "-@response[1].name.colorize(:blue)\n\n"
+        puts "\t@response[1].description.colorize(:blue)\n\n"
         
               
         end 
