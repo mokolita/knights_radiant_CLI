@@ -32,37 +32,38 @@ class CLI
 
         input = gets.strip.downcase
         @response = nil 
+        Orders.surges
         case input  
             when "protection", "leadership" 
                 puts "\n\n\ You are #{Orders.all[0].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[0].description.colorize(:red)}"
-                @response = Orders.all[0]
+                @response = Orders.all[0].surges 
             when "law", "justice"
                 puts "\n\n\ You are #{Orders.all[1].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[1].description.colorize(:red)}"
-                @response = Orders.all[1]
+                @response = Orders.all[1].surges 
             when "power", "destruction"
                 puts "\n\n\ You are #{Orders.all[2].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[2].description.colorize(:red)}"
-                @response = Orders.all[2]
+                @response = Orders.all[2].surges 
             when "food", "cultivation"
                 puts "\n\n\ You are #{Orders.all[3].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[3].description.colorize(:red)}"
-                @response = Orders.all[3]
+                @response = Orders.all[3].surges 
             when "healing", "truth"
                 puts "\n\n\ You are #{Orders.all[4].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[4].description.colorize(:red)}"
-                @response = Orders.all[4]
+                @response = Orders.all[4].surges 
             when "lies", "craftiness"
                 puts "\n\n\ You are #{Orders.all[5].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[5].description.colorize(:red)}"
-                @response = Orders.all[5]
+                @response = Orders.all[5].surges 
             when "knowledge", "travel"
                 puts "\n\n\ You are #{Orders.all[6].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[6].description.colorize(:red)}"
-                @response = Orders.all[6]
+                @response = Orders.all[6].surges 
             when "control", "progres"
                 puts "\n\n\ You are #{Orders.all[7].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[7].description.colorize(:red)}"
-                @response = Orders.all[7]
+                @response = Orders.all[7].surges 
             when "strength", "security"
                 puts "\n\n\ You are #{Orders.all[8].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[8].description.colorize(:red)}"
-                @response = Orders.all[8]
+                @response = Orders.all[8].surges 
             when "reconciliation", "authority"
                 puts "\n\n\ You are #{Orders.all[9].name.colorize(:red)}! \n\n Here is some more info on your order: \n\n#{Orders.all[9].description.colorize(:red)}"
-                @response = Orders.all[9]
+                @response = Orders.all[9].surges 
             else 
                 puts "\n\nSo sorry! What attribute did you pick?\n\n"
                 order_assignment 
@@ -80,8 +81,10 @@ class CLI
         else 
         #Scraper.parsed_surge_attributes
         binding.pry
-        puts @response.surges.colorize(:green)
-        puts @response.surges.colorize(:green)
+        puts @response[1].name.colorize(:green)
+        puts @response[1].description.colorize(:green)
+        puts @response[2].name.colorize(:blue)
+        puts @response[2].description.colorize(:blue)
         
               
         end 
