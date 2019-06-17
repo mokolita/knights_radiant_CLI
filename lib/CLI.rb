@@ -11,6 +11,7 @@ class CLI
             second_chance = gets.strip.downcase
             if second_chance == "yes"
                 decision_time 
+                provide_surge_info
             end 
         else 
             decision_time 
@@ -20,7 +21,7 @@ class CLI
     end 
 
     def decision_time
-        puts "\n\nTo start the proces you must swear the first ideal:\n\n\nLife before death. Strength before weakness. Journey before destination.".colorize(:green)
+        puts "\n\nTo start the process you must swear the first ideal:\n\n\nLife before death. Strength before weakness. Journey before destination.".colorize(:green)
         puts "\n\nNow, pick the attribute you value most:\n\n"
 
         Orders.attributes.values.each do |li|
