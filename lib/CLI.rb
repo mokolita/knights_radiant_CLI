@@ -92,15 +92,24 @@ class CLI
         puts "\n\nWould you like more info on your surges?\n\n"
         input = gets.strip.downcase  
         if input != "yes"
-            puts "\n\nGoodbye and good luck!\n\n\n".colorize(:green)
-            exit
+            puts "\n\nPut yes if you want to see more info. Otherwise, Goodbye and good luck!\n\n\n".colorize(:green)
+            input = gets.strip.downcase    
+            if input != "yes"
+                   puts "\n\nGoodbye and good luck!\n\n\n".colorize(:green)
+                   exit
+            else 
+                  surge_info
+                end 
         else 
+            surge_info
+        end 
+        puts "Good luck in the fight against the desolation, Surgebinder!\n\n\n".colorize(:green)
+    end 
+    
+    def surge_info
         puts "\n\n-#{@response[0].name.colorize(:light_blue)}\n\n"
         puts "#{@response[0].description.colorize(:light_blue)}\n\n"
         puts "-#{@response[1].name.colorize(:light_blue)}\n\n"
         puts "#{@response[1].description.colorize(:light_blue)}\n\n"
-        end 
-        puts "Good luck in the fight against the desolation, Surgebinder!\n\n\n".colorize(:green)
     end 
-
 end 
