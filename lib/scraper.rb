@@ -30,11 +30,4 @@ class Scraper
     surge_description = parsed_surges.css("h3 ~div.floatright ~p")[0..-3].text.split(/\n/).reject!(&:empty?)
     surge_hash = Hash[surge_name.zip(surge_description)]
     surge_hash.each_pair {|k, v| Surge.new(k, v)}
-    
-    
-    
-    
-    
-    
-    
 end 
