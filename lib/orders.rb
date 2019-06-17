@@ -11,9 +11,9 @@ class Orders
 
 
     def surges
-        a = self.description.scan(/(?<=Surges of )(.*)(?=\[12])/)
+        a = Orders.all[9].description.scan(/(?<=Surges of )(.*)(?=\[12])/)
         b = a.to_s.split(" ")
-
+       # binding.pry
         Surge.all.select do |surge_instance|
             if b[0].gsub("[[\"", '') == surge_instance.name
                 @surges << surge_instance 
