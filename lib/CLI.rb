@@ -43,31 +43,40 @@ class CLI
                 puts "\n\n Here is some more info on your order: \n\n#{Orders.all[0].description.colorize(:green)}"
                 @response = Orders.all[0].surges 
             when "law", "justice"
-                puts "\n\n\ You are #{Orders.all[1].name.colorize(:green)}! \n\n Here is some more info on your order: \n\n#{Orders.all[1].description.colorize(:green)}"
+                puts "\n\n\ You are #{Orders.all[1].name}!".colorize(:green) 
+                puts "\n\n Here is some more info on your order: \n\n#{Orders.all[1].description.colorize(:green)}"
                 @response = Orders.all[1].surges 
             when "power", "destruction"
-                puts "\n\n\ You are #{Orders.all[2].name.colorize(:green)}! \n\n Here is some more info on your order: \n\n#{Orders.all[2].description.colorize(:green)}"
+                puts "\n\n\ You are #{Orders.all[2].name}!".colorize(:green)
+                puts "\n\n Here is some more info on your order: \n\n#{Orders.all[2].description.colorize(:green)}"
                 @response = Orders.all[2].surges 
             when "food", "cultivation"
-                puts "\n\n\ You are #{Orders.all[3].name.colorize(:green)}! \n\n Here is some more info on your order: \n\n#{Orders.all[3].description.colorize(:green)}"
+                puts "\n\n\ You are #{Orders.all[3].name}!".colorize(:green)
+                puts "\n\n Here is some more info on your order: \n\n#{Orders.all[3].description.colorize(:green)}"
                 @response = Orders.all[3].surges 
             when "healing", "truth"
-                puts "\n\n\ You are #{Orders.all[4].name.colorize(:green)}! \n\n Here is some more info on your order: \n\n#{Orders.all[4].description.colorize(:green)}"
+                puts "\n\n\ You are #{Orders.all[4].name}!".colorize(:green)
+                puts "\n\n Here is some more info on your order: \n\n#{Orders.all[4].description.colorize(:green)}"
                 @response = Orders.all[4].surges 
             when "lies", "craftiness"
-                puts "\n\n\ You are #{Orders.all[5].name.colorize(:green)}! \n\n Here is some more info on your order: \n\n#{Orders.all[5].description.colorize(:green)}"
+                puts "\n\n\ You are #{Orders.all[5].name}!".colorize(:green)
+                puts "\n\n Here is some more info on your order: \n\n#{Orders.all[5].description.colorize(:green)}"
                 @response = Orders.all[5].surges 
             when "knowledge", "travel"
-                puts "\n\n\ You are #{Orders.all[6].name.colorize(:green)}! \n\n Here is some more info on your order: \n\n#{Orders.all[6].description.colorize(:green)}"
+                puts "\n\n\ You are #{Orders.all[6].name}!".colorize(:green)
+                puts "\n\n Here is some more info on your order: \n\n#{Orders.all[6].description.colorize(:green)}"
                 @response = Orders.all[6].surges 
             when "control", "progress"
-                puts "\n\n\ You are #{Orders.all[7].name.colorize(:green)}! \n\n Here is some more info on your order: \n\n#{Orders.all[7].description.colorize(:green)}"
+                puts "\n\n\ You are #{Orders.all[7].name}!".colorize(:green)
+                puts "\n\n Here is some more info on your order: \n\n#{Orders.all[7].description.colorize(:green)}"
                 @response = Orders.all[7].surges 
             when "strength", "security"
-                puts "\n\n\ You are #{Orders.all[8].name.colorize(:green)}! \n\n Here is some more info on your order: \n\n#{Orders.all[8].description.colorize(:green)}"
+                puts "\n\n\ You are #{Orders.all[8].name}!".colorize(:green) 
+                puts "\n\n Here is some more info on your order: \n\n#{Orders.all[8].description.colorize(:green)}"
                 @response = Orders.all[8].surges 
             when "reconciliation", "authority"
-                puts "\n\n\ You are #{Orders.all[9].name.colorize(:green)}! \n\n Here is some more info on your order: \n\n#{Orders.all[9].description.colorize(:green)}"
+                puts "\n\n\ You are #{Orders.all[9].name}!".colorize(:green)
+                puts "\n\n Here is some more info on your order: \n\n#{Orders.all[9].description.colorize(:green)}"
                 @response = Orders.all[9].surges 
             else 
                 puts "\n\nSo sorry! What attribute did you pick?\n\n"
