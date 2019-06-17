@@ -11,9 +11,8 @@ class Orders
 
 
     def surges
-        a = Orders.all[9].description.scan(/(?<=Surges of )(.*)(?=\[12])/)
+        a = self.description.scan(/(?<=Surges of )(.*)(?=\[12])/)
         b = a.to_s.split(" ")
-       # binding.pry
         Surge.all.select do |surge_instance|
             if b[0].gsub("[[\"", '') == surge_instance.name
                 @surges << surge_instance 
@@ -27,7 +26,6 @@ class Orders
             end 
         end 
         @surges 
-        #binding.pry
     end
     
     def self.attributes  
@@ -38,18 +36,3 @@ class Orders
         @@all
     end 
 end 
-
-
-#|| 
-
-#Attribute List
-    #Windrunner - protection & leadership
-    #Skybreakers - law & justice
-    #Dustbringers = power & distruction
-    #Edgedancer = food & cultivation
-    #Truthwatchers - healing & truth
-    #Lightweavers = lies & craftiness
-    #Elsecallers = knowledge & travel
-    #Willshapers = control & progress
-    #Stonewards - strength & security
-    #bondsmith - reconciliation - authority
