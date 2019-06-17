@@ -3,11 +3,11 @@ require "pry"
 class CLI 
 
     def run
-        puts "\n\n\nWelcome! So you want to be a surgebinder?\n\n\n"
+        puts "\n\n\nWelcome! You would like to be a surgebinder, yes?\n\n\n"
         
         input = gets.strip.downcase
         if input != "yes"
-            puts "If you would like one more chance to join the Knights Radiant, type yes! Otherwise, goodbye and good luck!"
+            puts "If you would like one more chance to become a Knights Radiant, type yes! Otherwise, goodbye and good luck!"
             second_chance = gets.strip.downcase
             if second_chance == "yes"
                 decision_time 
@@ -20,10 +20,11 @@ class CLI
     end 
 
     def decision_time
-        puts "\n\nPick the attribute you value most:\n\n"
+        puts "\n\nTo start the proces you must swear the first ideal:\n\n\nLife before death. Strength before weakness. Journey before destination."
+        puts "\n\nNow, pick the attribute you value most:\n\n"
 
         Orders.attributes.values.each do |li|
-            puts "\n\t -#{li.colorize(:pink)}\n\n"
+            puts "\n\t -#{li.colorize(:purple)}\n\n"
         end 
         order_assignment 
     end 

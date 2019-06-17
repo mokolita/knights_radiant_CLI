@@ -27,7 +27,7 @@ class Orders
             end 
         end 
         @surges 
-        binding.pry
+        #binding.pry
     end
     
     def self.attributes  
