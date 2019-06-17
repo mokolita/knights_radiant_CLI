@@ -99,7 +99,7 @@ class CLI
         puts "-#{@response[1].name.colorize(:light_blue)}\n\n"
         puts "#{@response[1].description.colorize(:light_blue)}\n\n"
         end 
-        puts "Goodbye and good luck!"
+        puts "Good luck in the fight against the desolation, Surgebinder!\n\n\n".colorize(:green)
     end 
 
 end 
