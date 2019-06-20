@@ -21,12 +21,16 @@ class CLI
     end 
 
     def decision_time
-        puts "\n\nTo start the process you must swear the first ideal:\n\n\nLife before death. Strength before weakness. Journey before destination.".colorize(:green)
+        puts "\n\nTo start the process you must swear the first ideal:"
+        Scraper.order_initialize
+        Scraper.second_level
+        puts "\n\n#{Scraper.second_level.colorize(:green)}"
         puts "\n\nNow, pick the attribute you value most:\n\n"
-
+        
         Orders.attributes.values.each do |li|
             puts "\n\t -#{li.colorize(:green)}\n\n"
         end
+         
         order_assignment 
     end 
 
@@ -37,7 +41,7 @@ class CLI
             end  
 
         @response = nil 
-
+        Scraper.surge_initialize
         case input  
             when "protection", "leadership" 
                 puts "\n\n\ You are #{Orders.all[0].name}!".colorize(:green)

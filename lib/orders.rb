@@ -1,10 +1,11 @@
 class Orders
-    attr_accessor :name, :description
+    attr_accessor :name, :description, :info_url
     @@attributes = {:windrunners => "Protection or Leadership", :skybreakers => "Law or Justice", :dustbringers => "Power or Destruction", :edgedancers => "Food or Cultivation", :truthwatchers => "Healing or Truth", :lightweaver => "Lies or Craftiness", :elsecallers => "Knowledge or Travel", :willshapers => "Control or Progress", :stonewards => "Strength or Security", :bondsmiths => "Reconciliation or Authority"}
     @@all = []
-    def initialize(name, description)
+    def initialize(name, description, info_url)
         @name = name
         @description = description
+        @info_url = info_url
         @@all << self
         @surges = [] 
     end 
